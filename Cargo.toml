@@ -1,0 +1,33 @@
+[package]
+name = "homedns"
+version = "0.1.0"
+authors = ["Tim Buckley <timothyb89@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-dnssd = { git = "https://github.com/stbuehler/rust-async-dnssd", sha = "b85730f800efcd2fbf9356feb6a5e90a8bbca309" }
+trust-dns-server = { version = "0.20", features = ["resolver", "dns-over-rustls"] }
+trust-dns-resolver = { version = "0.20", features = ["mdns"] }
+
+tide = { version = "0.16" }
+async-std = { version = "1.6.0", features = ["attributes"] }
+reqwest = { version = "0.11", features = ["json"] }
+err-derive = "0.3"
+url = "2"
+base64 = "0.13"
+chrono = { version = "0.4", features = ["serde"] }
+
+tokio = { version = "1.5", features = ["full"] }
+tracing = "0.1"
+tracing-error = "0.1"
+tracing-subscriber = "0.2"
+color-eyre = "0.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+structopt = "0.3"
+futures = "0.3"
+futures-util = "0.3"
+regex = "1.5"
+lazy_static = "1"
